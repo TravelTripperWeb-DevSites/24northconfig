@@ -6,8 +6,19 @@
   <script src="/loader.js"></script>
 </head>
 <body>
-  Hi.
+  {% if site.url %}
+    <script type="text/javascript">
+      var url = "{{site.url}}"
+      {% if jekyll.environment != "production" %}
+        url = url + "?draft-url=" + window.location.href.replace(/https?:\/\//,'').replace(/\/$/,'');
+      {% endif %}
+      window.location = url;
+    </script>
+  {% endif %}
+
   <div data-replace="BookingWidget"></div>
+  
+  <div data-replace="BookingWidgetButton"></div>
   
   <div data-replace="ConversionPlusBanner"></div>
   
