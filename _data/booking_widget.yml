@@ -1,7 +1,7 @@
 ---
 show_rates: false
-show_offer_code: false
-show_specials: false
+show_offer_code: true
+show_specials: true
 __EDITABLE_FIELDS__:
   show_rates:
     type: boolean
