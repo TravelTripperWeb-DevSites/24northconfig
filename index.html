@@ -6,9 +6,9 @@
   <script src="/loader.js"></script>
 </head>
 <body>
-  {% if site.config && site.config.url %}
+  {% if site.url %}
     <script type="text/javascript">
-      var url = "{{site.config.url}}"
+      var url = "{{site.url}}"
       {% if jekyll.environment != "production" %}
         url = url + "?draft-url=" + window.location.href.replace(/https?:\/\//,'').replace(/\/$/,'');
       {% endif %}
