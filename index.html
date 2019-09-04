@@ -8,7 +8,10 @@
 <body>
   {% if site.config && site.config.url %}
     <script type="text/javascript">
-      var url = "{{site.config.url}}?draft-url=" + window.location.href.replace(/https?:\/\//,'').replace(/\/$/,'')
+      var url = "{{site.config.url}}"
+      {% if jekyll.environment != "production" %}
+        url = url + "?draft-url=" + window.location.href.replace(/https?:\/\//,'').replace(/\/$/,'');
+      {% endif %}
       window.location = url;
     </script>
   {% endif %}
